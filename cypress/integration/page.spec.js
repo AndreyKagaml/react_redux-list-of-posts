@@ -174,7 +174,7 @@ describe('', () => {
     if (failed) Cypress.runner.stop();
   });
 
-  describe.skip('Page by default', () => {
+  describe('Page by default', () => {
     describe('', () => {
       beforeEach(() => {
         page.mockUsers();
@@ -250,7 +250,7 @@ describe('', () => {
     });
   })
 
-  describe.skip('UserSelector', () => {
+  describe('UserSelector', () => {
     const { el, button, users, selectedUser } = userSelector;
 
     describe('', () => {

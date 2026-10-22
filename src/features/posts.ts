@@ -39,7 +39,7 @@ export const postsSlice = createSlice({
 
     builder.addCase(fetchPosts.rejected, state => {
       state.hasError = true;
-      state.loaded = false;
+      state.loaded = true;
     });
   },
 });

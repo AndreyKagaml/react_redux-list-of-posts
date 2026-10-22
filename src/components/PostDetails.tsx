@@ -30,7 +30,7 @@ export const PostDetails: React.FC<Props> = ({ post }) => {
   }, [post.id]);
 
   const addComment = async ({ name, email, body }: CommentData) => {
-    dispatch(
+    await dispatch(
       postComment({
         name,
         email,
