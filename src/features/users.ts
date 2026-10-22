@@ -11,8 +11,8 @@ export const fetchUsers = createAsyncThunk('users/fetch', async () => {
 
 const initialState = {
   items: [] as User[],
-  loading: false,
-  error: false,
+  loaded: false,
+  hasError: false,
 };
 
 export const usersSlice = createSlice({
@@ -21,17 +21,17 @@ export const usersSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder.addCase(fetchUsers.pending, state => {
-      state.loading = true;
+      state.loaded = false;
     });
 
     builder.addCase(fetchUsers.fulfilled, (state, action) => {
       state.items = action.payload;
-      state.loading = false;
+      state.loaded = true;
     });
 
     builder.addCase(fetchUsers.rejected, state => {
-      state.error = true;
-      state.loading = false;
+      state.hasError = true;
+      state.loaded = false;
     });
   },
 });
